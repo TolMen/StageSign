@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Charger les fichiers .php sans extension de même dossier
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/.]+)$ $1.php [L]
+
+# Charger les fichiers .html sans extension de même dossier
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# Rediriger vers 404.html (extension modifiable, 404 si réécriture) si le fichier ou dossier n'existe pas
+# Tous les fichiers et chemins son concernée, de même dossier et de sous-dossiers
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /StageSign/404.html [L]
