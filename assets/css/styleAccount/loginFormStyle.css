@@ -1,0 +1,296 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+/* ---------------------------------------------------------------------- */
+
+/* Form box */
+
+.box {
+    position: relative;
+    width: 380px;
+    height: 420px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(
+        0deg,
+        transparent,
+        transparent,
+        #8800ff,
+        #8800ff,
+        #8800ff
+    );
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+.box::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(
+        0deg,
+        transparent,
+        transparent,
+        #8800ff,
+        #8800ff,
+        #8800ff
+    );
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+.borderLine {
+    position: absolute;
+    top: 0;
+    inset: 0;
+}
+
+.borderLine::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(
+        0deg,
+        transparent,
+        transparent,
+        #000000,
+        #000000,
+        #000000
+    );
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+
+.borderLine::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(
+        0deg,
+        transparent,
+        transparent,
+        #000000,
+        #000000,
+        #000000
+    );
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -4.5s;
+}
+
+/* Animation of the form box */
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---------------------------------------------------------------------- */
+
+/* Form */
+
+.box form {
+    position: absolute;
+    inset: 4px;
+    background: white;
+    padding: 50px 40px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.box form h2 {
+    color: black;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.box .boxIdentity {
+    display: flex;
+}
+
+/* Input fields */
+
+.box form .inputBoxIdentity,
+.box form .inputBoxOther {
+    position: relative;
+    margin-top: 35px;
+}
+
+.box form .inputBoxIdentity {
+    width: 150px;
+}
+
+.box form .inputBoxOther {
+    width: 300px;
+}
+
+.box form .inputBox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: white;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+}
+
+.box form .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    pointer-events: none;
+    color: black;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+.box form .inputBox input:valid ~ span,
+.box form .inputBox input:focus ~ span {
+    color: black;
+    font-size: 0.75em;
+    transform: translateY(-34px);
+}
+
+.box form .inputBox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 94%;
+    height: 2px;
+    background: black;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.box form .inputBox input:valid ~ i,
+.box form .inputBox input:focus ~ i {
+    height: 44px;
+}
+
+/* Form link */
+
+.box form .links {
+    display: flex;
+    justify-content: end;
+}
+
+.box form .links a {
+    margin: 10px 10px;
+    font-size: 0.75em;
+    color: black;
+    text-decoration: none;
+}
+
+/* Form button final */
+
+.box form input[type="submit"] {
+    border: none;
+    outline: none;
+    padding: 9px 5px;
+    background: black;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 125px;
+    margin-top: 10px;
+    color: white;
+}
+
+.box form input[type="submit"]:hover {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.box form input[type="submit"]:active {
+    opacity: 0.8;
+}
+
+/* ---------------------------------------------------------------------- */
+
+/* CSS Responsive */
+
+@media screen and (max-width: 500px) {
+    .box,
+    .box::before,
+    .box::after,
+    .borderLine::before,
+    .borderLine::after {
+        width: 310px;
+        height: 395px;
+    }
+
+    .box form {
+        padding: 40px 25px;
+    }
+
+    .box form .inputBox i.name {
+        width: 91%;
+    }
+
+    .box form .inputBox i {
+        width: 81%;
+    }
+}
+
+/* ---------------------------------------------------------------------- */
