@@ -1,0 +1,36 @@
+.phrase_accroche {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: -35px;
+}
+.phrase_accroche h1 {
+    color: white;
+    font-size: 70px;
+    text-align: center;
+    font-family: "Pacifico", serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+
+  .phrase_accroche p {
+    color: white;
+    font-style: italic;
+    font-size: 15px;
+  }
+  #presentation_section {
+    place-content: center;
+    background-image: url("assets/img/2149396678.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 100vh;
+  }
+  /* Section présentation */
+  #presentation_section .phrase_accroche {
+    text-align: center;
+    padding: 20px;
+  }
+  
