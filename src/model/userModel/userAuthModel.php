@@ -1,7 +1,7 @@
 <?php
 
 // Inclusion de fichier nécessaire
-require_once '../../controller/BDDController/connectBDD.php';
+require_once './src/controller/bddController/connectBDD.php';
 
 // Classe pour gérer les opérations de connexion
 class UserAuthModel
