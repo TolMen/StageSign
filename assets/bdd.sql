@@ -28,20 +28,19 @@ CREATE TABLE IF NOT EXISTS compagnie (
     country VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB;
 
-
 -- Table des étudiants
 CREATE TABLE IF NOT EXISTS student (
     id INT AUTO_INCREMENT PRIMARY KEY,
     class VARCHAR(255) NOT NULL,
     date_of_birth DATE NOT NULL, 
-    user_id INT NOT NULL
+    user_id INT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 -- Table des professeurs
 CREATE TABLE IF NOT EXISTS teacher (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL
+    user_id INT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
@@ -49,45 +48,45 @@ CREATE TABLE IF NOT EXISTS teacher (
 CREATE TABLE IF NOT EXISTS tutor (
     id INT AUTO_INCREMENT PRIMARY KEY,
     function VARCHAR(255) NOT NULL,
-    user_id INT NOT NULL
-    compagny_id INT NOT NULL
-    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
+    user_id INT NOT NULL,
+    compagny_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
     FOREIGN KEY (compagny_id) REFERENCES compagnies(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 -- Table des directions
 CREATE TABLE IF NOT EXISTS direction (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL
-    compagny_id INT NOT NULL
-    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
+    user_id INT NOT NULL,
+    compagny_id INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
     FOREIGN KEY (compagny_id) REFERENCES compagnies(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 -- Table des administrateurs
 CREATE TABLE IF NOT EXISTS administrator (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL
+    user_id INT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 -- Table des convention
 CREATE TABLE IF NOT EXISTS convention (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL UNIQUE DEFAULT 
+    name VARCHAR(255) NOT NULL UNIQUE DEFAULT ,
     etat ENUM("attente", "signe", "archive"),
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
     place VARCHAR(255),
     subject TEXT NOT NULL,
-    student_id INT NOT NULL
-    tutor_id INT NOT NULL
-    teacher_id INT NOT NULL
-    direction_id INT NOT NULL
-    FOREIGN KEY (student_id) REFERENCES student(id) ON DELETE CASCADE
-    FOREIGN KEY (tutor_id) REFERENCES tutor(id) ON DELETE CASCADE
-    FOREIGN KEY (teacher_id) REFERENCES teacher(id) ON DELETE CASCADE
-    FOREIGN KEY (direction_id) REFERENCES direction(id) ON DELETE CASCADE
-    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    student_id INT NOT NULL,
+    tutor_id INT NOT NULL,
+    teacher_id INT NOT NULL,
+    direction_id INT NOT NULL,
+    FOREIGN KEY (student_id) REFERENCES student(id) ON DELETE CASCADE,
+    FOREIGN KEY (tutor_id) REFERENCES tutor(id) ON DELETE CASCADE,
+    FOREIGN KEY (teacher_id) REFERENCES teacher(id) ON DELETE CASCADE,
+    FOREIGN KEY (direction_id) REFERENCES direction(id) ON DELETE CASCADE,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
