@@ -1,7 +1,5 @@
 RewriteEngine On
 
-# Rediriger vers 404.html (extension modifiable, 404 si réécriture) si le fichier ou dossier n'existe pas
-# Tous les fichiers et chemins son concernée, de même dossier et de sous-dossiers
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /StageSign/404.html [L]
