@@ -100,6 +100,7 @@ CREATE TABLE IF NOT EXISTS schedule (
     student_id INT NOT NULL,
     FOREIGN KEY (student_id) REFERENCES student(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
+<<<<<<< HEAD
 
 
 -- Table reliant les conventions aux horraires
@@ -110,3 +111,5 @@ CREATE TABLE IF NOT EXISTS convention_schedule (
     FOREIGN KEY (convention_id) REFERENCES convention(id) ON DELETE CASCADE,
     FOREIGN KEY (schedule_id) REFERENCES schedule(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
+=======
+>>>>>>> main
