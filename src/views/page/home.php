@@ -2,14 +2,15 @@
 <html lang="fr">
 
 <head>
-    <?php include 'head.php'; ?>
-    <link rel="stylesheet" href="homeStyle.css" />
+    <?php include '../component/head.php'; ?>
+    <link rel="stylesheet" href="../../../assets/css/homeStyle.css" />
     <title>StageSign </title>
 </head>
 
 <body>
     <!-- Inclusion de la barre de navigation -->
-    <?php include 'navbar.php' ?>
+    <?php include '../component/navbar.php' ?>
+
     <section id="presentation_section">
         <div class="container phrase_accroche ">
             <div class="row justify-content-center">
@@ -22,7 +23,7 @@
     </section>
 
     <!-- Inclusion du pied de page -->
-    <!-- <?php include 'src/component/footer.php' ?> -->
+    <?php include '../component/footer.php' ?>
 
     <!-- Liens vers les scripts JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
