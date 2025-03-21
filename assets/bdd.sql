@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS direction (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     compagnie_id INT NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
     FOREIGN KEY (compagnie_id) REFERENCES compagnie(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
@@ -98,11 +98,9 @@ CREATE TABLE IF NOT EXISTS schedule (
     pause_time TIME NOT NULL,
     day ENUM("lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"),
     student_id INT NOT NULL,
-    FOREIGN KEY (student_id) REFERENCES student(id) ON DELETE CASCADE
+    FOREIGN KEY (student_id) REFERENCES student(id) ON DELETE CASCADE,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
-<<<<<<< HEAD
-
 
 -- Table reliant les conventions aux horraires
 CREATE TABLE IF NOT EXISTS convention_schedule (
@@ -112,5 +110,3 @@ CREATE TABLE IF NOT EXISTS convention_schedule (
     FOREIGN KEY (convention_id) REFERENCES convention(id) ON DELETE CASCADE,
     FOREIGN KEY (schedule_id) REFERENCES schedule(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
-=======
->>>>>>> main
