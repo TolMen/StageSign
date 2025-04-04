@@ -36,6 +36,9 @@ if (isset($_POST['connexion'])) {
                 $_SESSION['pseudo'] = $pseudo;
                 $_SESSION['id'] = $dataAuthUser['id'];
                 $_SESSION['role'] = $dataAuthUser['role'];
+
+                header('Location: ../../views/page/home.php');
+                exit;
             } else {
                 echo 'Erreur lors de la connexion.';
             }

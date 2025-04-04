@@ -5,7 +5,7 @@ session_name("main");
 session_start();
 
 // Inclusion du fichier nécessaire
-require_once '../BDDController/connectBDD.php';
+require_once '../../controller/bddController/connectBDD.php';
 
 // Réinitialise les variables, puis détruit la session
 $_SESSION = array();
