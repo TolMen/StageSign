@@ -1,0 +1,42 @@
+
+html, body, main {
+    height: 100%;
+}
+
+.container > * {
+    justify-content: center;
+    align-items: center;
+}
+.recherche {
+    justify-content: center;
+    border: #000 solid 2px;
+    border-radius: 8px;
+    margin-top: 30px;
+    padding: 30px;
+}
+
+section {
+    text-align: center;
+}
+
+article div {
+    height: 100px;
+    align-content: center;
+    border : 2px solid #000;
+    border-radius: 8px;
+    color: brown;
+    font-weight: bold;
+}
+
+article h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    gap: 30px;
+}
