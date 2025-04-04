@@ -27,19 +27,18 @@ Le fichier `.htaccess` (sans extension) sera notre fichier servant à configurer
 ```
 RewriteEngine On
 
-# Charger les fichiers .php sans extension de même dossier
+# Charger les fichiers .php sans extension
 RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^([^/.]+)$ $1.php [L]
+RewriteRule ^(.*)$ $1.php [NC,L]
 
-# Charger les fichiers .html sans extension de même dossier
+# Charger les fichiers .html sans extension
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^([^/]+)/?$ $1.html [L]
+RewriteRule ^(.*)$ $1.html [NC,L]
 
-# Rediriger vers 404.html (extension modifiable, 404 si réécriture) si le fichier ou dossier n'existe pas
-# Tous les fichiers et chemins son concernée, de même dossier et de sous-dossiers
+# Rediriger vers 404.html (ou autres)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /StageSign/404.html [L]
+RewriteRule . /monsite/404.html [L]
 ```
 
 Ce fichier nous permet de faire les mêmes choses qu'avant :
@@ -48,8 +47,6 @@ Ce fichier nous permet de faire les mêmes choses qu'avant :
     - `<a href="connexion">Lien redirigeant sur la page connexion.ext</a> `
     - `header("Location: home")`
     - `<form method="POST" action="home">`
-
-⚠️ Pour la réécriture seulement, **les fichiers dans les sous-dossiers ne sont pas affectés** par ce changement. Faire comme exemple `header("Location: control/userlogin")` ne marchera pas et causera des bugs.
 
 > Note : Il est toujours possible de mettre comme exemple `home.ext`, mais l'URL affichera l'extention.
 
