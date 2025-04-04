@@ -1,9 +1,6 @@
 
 <?php
 
-session_name("main");
-session_start();
-
 class connectBDD {
     private static $name = "stagesign";
     private static $url = "localhost";
