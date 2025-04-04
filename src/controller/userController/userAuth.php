@@ -5,7 +5,7 @@ session_name("main");
 session_start();
 
 // Inclusion des fichiers nécessaire
-require_once '../../model/userModel/userAuthModel.php';
+include_once '../../model/userModel/userAuthModel.php';
 require_once '../../model/userModel/userSecurityModel.php';
 
 // Vérifie si le formulaire est soumis, puis si les champs sont vide
