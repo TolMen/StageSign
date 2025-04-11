@@ -18,4 +18,11 @@ class connectBDD {
             exit;
         }
     }
+
+    public static function redirectNonAdminUser() {
+        if (empty($_SESSION["id"]) || $_SESSION["role"] != "admin") {
+            header("Location: home.php"); # .htaccess
+            exit;
+        }
+    }
 }
