@@ -110,3 +110,29 @@ CREATE TABLE IF NOT EXISTS convention_schedule (
     FOREIGN KEY (convention_id) REFERENCES convention(id) ON DELETE CASCADE,
     FOREIGN KEY (schedule_id) REFERENCES schedule(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS preconv (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    student_civility ENUM('M', 'Mme', 'Mlle') NOT NULL,
+    student_name VARCHAR(100) NOT NULL,
+    student_class VARCHAR(50) NOT NULL,
+    program_referent VARCHAR(100) NOT NULL,
+    company_name VARCHAR(255) NOT NULL,
+    company_address TEXT NOT NULL,
+    internship_location TEXT NOT NULL,
+    director_civility ENUM('M', 'Mme', 'Mlle') NOT NULL,
+    director_name VARCHAR(100) NOT NULL,
+    director_phone VARCHAR(20) NOT NULL,
+    director_email VARCHAR(255) NOT NULL,
+    tutor_civility ENUM('M', 'Mme', 'Mlle') DEFAULT NULL,
+    tutor_name VARCHAR(100) DEFAULT NULL,
+    tutor_phone VARCHAR(20) DEFAULT NULL,
+    tutor_email VARCHAR(255) DEFAULT NULL,
+    tutor_function VARCHAR(100) DEFAULT NULL,
+    mission_description TEXT NOT NULL,
+    working_hours TEXT NOT NULL,
+    additional_remarks TEXT DEFAULT NULL,
+    variable_schedule BOOLEAN NOT NULL DEFAULT 0
+) ENGINE=InnoDB;

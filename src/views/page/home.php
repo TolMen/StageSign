@@ -1,3 +1,10 @@
+<?php 
+
+session_name("main");
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 

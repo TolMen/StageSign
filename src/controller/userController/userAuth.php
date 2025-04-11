@@ -24,6 +24,10 @@ if (isset($_POST['connexion'])) {
 
         // Si variables errors vide, on crée une instance du modèle de la classe
         if (empty($errorsSecurAccount)) {
+            // Connexion à la BDD
+            $connectBDD = new connectBDD;
+            $bdd = $connectBDD->getConnexion();
+            
             $userAuthModel = new UserAuthModel();
 
             // Récupère le pseudo fourni

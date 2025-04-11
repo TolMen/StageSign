@@ -15,18 +15,14 @@ $current_page = basename($_SERVER['PHP_SELF']); // Récupère uniquement le nom 
                 <li class="nav-item">
                     <a class="nav-link <?php echo ($current_page == '../../views/page/home.php') ? 'active text-primary' : ''; ?>" href="../../views/page/home.php">Accueil</a>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link " href="../../views/form/loginForm.php">Connexion</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="">Inscription</a>
-                </li>
                 <?php if (!empty($_SESSION['id'])) { ?>
                     <li class="nav-item">
                         <a class="nav-link text-danger" href="../../controller/userController/userStop.php" title="Déconnexion">Déconnexion</a>
                     </li>
+                <?php } else { ?>
+                <li class="nav-item">
+                    <a class="nav-link " href="../../views/form/loginForm.php">Connexion</a>
+                </li>
                 <?php } ?>
             </ul>
         </div>
