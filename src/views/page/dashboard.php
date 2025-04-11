@@ -5,9 +5,9 @@ session_start();
 
 require_once '../../model/ConvModel/ConvModel.php';
 
-$attente = ConvModel::getConvByEtat("attente");
-$signees = ConvModel::getConvByEtat("signee");;
-$archivees = ConvModel::getConvByEtat("archivee");;
+$attente = ConvModel::getCountConvByEtat("attente");
+$signees = ConvModel::getCountConvByEtat("signee");;
+$archivees = ConvModel::getCountConvByEtat("archivee");;
 
 connectBDD::redirectNonAdminUser();
 
