@@ -19,37 +19,39 @@ class UserAuthModel {
         $recupUser = $bdd->prepare('SELECT * FROM student WHERE user_id = ?');
         $recupUser->execute([$id]);
         $resultat = $recupUser->fetch();
-        var_dump($resultat);
-        exit;
-        // return sizeof($resultat) != 0;
+        return !empty($resultat);
     }
 
     public function isTeacher($id) {
         $bdd = connectBDD::getConnexion();
         $recupUser = $bdd->prepare('SELECT * FROM teacher WHERE user_id = ?');
         $recupUser->execute([$id]);
-        return !empty($recupUser);
+        $resultat = $recupUser->fetch();
+        return !empty($resultat);
     }
 
     public function isTutor($id) {
         $bdd = connectBDD::getConnexion();
         $recupUser = $bdd->prepare('SELECT * FROM tutor WHERE user_id = ?');
         $recupUser->execute([$id]);
-        return !empty($recupUser);
+        $resultat = $recupUser->fetch();
+        return !empty($resultat);
     }
 
     public function isDirection($id) {
         $bdd = connectBDD::getConnexion();
         $recupUser = $bdd->prepare('SELECT * FROM direction WHERE user_id = ?');
         $recupUser->execute([$id]);
-        return !empty($recupUser);
+        $resultat = $recupUser->fetch();
+        return !empty($resultat);
     }
 
     public function isAdmin($id) {
         $bdd = connectBDD::getConnexion();
         $recupUser = $bdd->prepare('SELECT * FROM administrator WHERE user_id = ?');
         $recupUser->execute([$id]);
-        return !empty($recupUser);
+        $resultat = $recupUser->fetch();
+        return !empty($resultat);
     }
 
     public function getRoleUser($id) {
