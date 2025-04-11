@@ -8,7 +8,7 @@ session_start();
 include_once '../../model/userModel/userAuthModel.php';
 require_once '../../model/userModel/userSecurityModel.php';
 
-// Vérifie si le formulaire est soumis, puis si les champs sont vide
+// Vérifie si le formulaire est soumis, puis si les champs sont vides
 if (isset($_POST['connexion'])) {
     if (!empty($_POST['pseudo']) && !empty($_POST['password'])) {
 
@@ -27,7 +27,7 @@ if (isset($_POST['connexion'])) {
             $userAuthModel = new UserAuthModel();
 
             // Récupère le pseudo fourni
-            $dataAuthUser = $userAuthModel->getAuthUser($bdd, $pseudo, $password);
+            $dataAuthUser = $userAuthModel->getAuthUser($pseudo, $password);
 
             // Vérifie la présence du pseudo, puis si le MDP correspond au MDP haché dans la BDD
             if ($dataAuthUser) {
@@ -40,10 +40,10 @@ if (isset($_POST['connexion'])) {
                 header('Location: ../../views/page/home.php');
                 exit;
             } else {
-                echo 'Erreur lors de la connexion.';
+                header("Location: ./../../views/form/loginForm.php?invalid=True");
             }
         } else {
-            echo '$errorsSecurAccount';
+            header("Location: ./../../views/form/loginForm.php?invalid=True");
         }
     }
 } else {

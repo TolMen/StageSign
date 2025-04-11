@@ -37,6 +37,11 @@ session_start();
                     <span>Mot de passe</span>
                     <i></i>
                 </div>
+                <?php if (!empty($_GET["invalid"])) { ?>
+                    <div>
+                        <p>Identifiant ou mot de passe invalide</p>
+                    </div>
+                <?php } ?>
                 <!-- End of Input fields -->
                 <div class="links">
                     <a href="#">Password oublié</a>

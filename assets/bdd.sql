@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS user (
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
--- Table des entreprise
+-- Table des entreprises
 CREATE TABLE IF NOT EXISTS compagnie (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS administrator (
     FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
--- Table des convention
+-- Table des conventions
 CREATE TABLE IF NOT EXISTS convention (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL UNIQUE,
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS schedule (
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB;
 
--- Table reliant les conventions aux horraires
+-- Table reliant les conventions aux horaires
 CREATE TABLE IF NOT EXISTS convention_schedule (
     id INT AUTO_INCREMENT PRIMARY KEY,
     convention_id INT NOT NULL,
