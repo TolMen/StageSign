@@ -3,6 +3,13 @@ html, body, main {
     height: 100%;
 }
 
+body {
+    background-image: url("../img/dashboard.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
 .container > * {
     justify-content: center;
     align-items: center;

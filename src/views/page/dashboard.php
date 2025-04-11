@@ -9,10 +9,6 @@ $archivees = 0;
 
 require_once '../../controller/bddController/connectBDD.php';
 
-echo $_SESSION["pseudo"]." ";
-echo $_SESSION["id"]." ";
-echo $_SESSION["role"]." ";
-
 connectBDD::redirectNonAdminUser();
 
 ?>
