@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS administrator (
 -- Table des conventions
 CREATE TABLE IF NOT EXISTS convention (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL UNIQUE,
+    name VARCHAR(255) NOT NULL,
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
     place VARCHAR(255),
@@ -150,7 +150,6 @@ INSERT INTO user (pseudo, firstname, lastname, civility, password, email, phone)
 -- Insertion d'un étudiant
 INSERT INTO student (class, date_of_birth, user_id) VALUES
                                                         ('SIO1', '2005-10-05', 1);
-
 -- Insertion d'un administrateur
 INSERT INTO administrator (user_id) VALUES
 (2);
@@ -171,4 +170,9 @@ INSERT INTO tutor (function, user_id, compagnie_id) VALUES
 INSERT INTO direction (user_id, compagnie_id) VALUES
 (5, 1);
 
+-- Insertion de conventions
+INSERT INTO convention (name, start_date, end_date, place, subject, student_id, tutor_id, teacher_id, direction_id, etat) VALUES
+('Convention_Stage_BSIO1_ARSAC', '2024-12-05', '2024-27-06', 'Paris', 'Sujet de la convention 1', 1, 1, 1, 1, 'archivee'),
+('Convention_Stage_BSIO2_ARSAC', '2025-12-05', '2025-27-06', 'Paris', 'Sujet de la convention 2', 1, 1, 1, 1, 'signee'),
+('Convention_Stage_BSIO2_ARSAC', '2026-12-06', '2026-27-06', 'Paris', 'Sujet de la convention 3', 1, 1, 1, 1, 'attente');
 
