@@ -140,36 +140,35 @@ CREATE TABLE IF NOT EXISTS preconv (
 -- A SUPPRIMER EN FIN DE PROJET !!!
 
 -- Insertion des utilisateurs
-INSERT INTO user (pseudo, firstname, lastname, civility, password, email, phone)
-VALUES
-    ('narsac', 'Nolan', 'Arsac', 'M', 'btssio', 'Arsac15611@lasalle63.fr', '0000000000'),
-    ('root', 'Root', 'Root', 'M', 'root', 'root@lasalle63.fr', '0000000000'),
-    ('teacher', 'Jane', 'Smith', 'Mme', 'btssio', 'jane.smith@example.com', '0000000000'),
-    ('tutor', 'Tom', 'Tutor', 'M', 'btssio', 'tom.tutor@example.com', '0000000000'),
-    ('director', 'Anna', 'Director', 'Mme', 'btssio', 'anna.director@example.com', '0000000000');
+INSERT INTO user (pseudo, firstname, lastname, civility, password, email, phone) VALUES
+('narsac', 'Nolan', 'Arsac', 'M', SHA2('btssio', 256), 'Arsac15611@lasalle63.fr', '0000000000'),
+('root', 'Root', 'Root', 'M', SHA2('root', 256), 'root@lasalle63.fr', '0000000000'),
+('teacher', 'Jane', 'Smith', 'Mme', SHA2('btssio', 256), 'jane.smith@example.com', '0000000000'),
+('tutor', 'Tom', 'Tutor', 'M', SHA2('btssio', 256), 'tom.tutor@example.com', '0000000000'),
+('director', 'Anna', 'Director', 'Mme', SHA2('btssio', 256), 'anna.director@example.com', '0000000000');
 
 -- Insertion d'un étudiant
-INSERT INTO student (class, date_of_birth, user_id)
-VALUES ('SIO1', '2005-10-05', 1);
+INSERT INTO student (class, date_of_birth, user_id) VALUES
+                                                        ('SIO1', '2005-10-05', 1);
 
 -- Insertion d'un administrateur
-INSERT INTO administrator (user_id)
-VALUES (2);
+INSERT INTO administrator (user_id) VALUES
+(2);
 
 -- Insertion d'un professeur
-INSERT INTO teacher (user_id)
-VALUES (3);
+INSERT INTO teacher (user_id) VALUES
+(3);
 
 -- Insertion d'une entreprise
-INSERT INTO compagnie (name, first_address, postal_code, city, country)
-VALUES ('123 Entreprise', '123 Adresse', '63000', 'Clermont-Ferrand', 'France');
+INSERT INTO compagnie (name, first_address, postal_code, city, country) VALUES
+('123 Entreprise', '123 Adresse', '63000', 'Clermont-Ferrand', 'France');
 
 -- Insertion d'un tuteur
-INSERT INTO tutor (function, user_id, compagnie_id)
-VALUES ('Développeur', 4, 1);
+INSERT INTO tutor (function, user_id, compagnie_id) VALUES
+('Développeur', 4, 1);
 
 -- Insertion d'un directeur (direction)
-INSERT INTO direction (user_id, compagnie_id)
-VALUES (5, 1);
+INSERT INTO direction (user_id, compagnie_id) VALUES
+(5, 1);
 
 
