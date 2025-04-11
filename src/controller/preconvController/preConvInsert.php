@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Message de succès ou d'échec
     if ($isInserted) {
-        $_SESSION['message'] = ['type' => 'success', 'content' => 'Votre pré-convention a été validée avec succès.'];
+        $_SESSION['message'] = ['type' => 'success', 'content' => 'Votre pré-convention a été validée avec succès. Vous recevrez un mail pour signer la convention.'];
     } else {
         $_SESSION['message'] = ['type' => 'danger', 'content' => 'Une erreur est survenue lors de l\'insertion de la pré-convention.'];
     }

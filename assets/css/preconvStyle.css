@@ -1,0 +1,84 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f4e1c1;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 1px solid #9e7e55;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control,
+.form-select,
+.form-check-input {
+    border-radius: 10px;
+}
+
+.form-check-label {
+    font-weight: normal;
+}
+
+.btn-primary {
+    background-color: #9e7e55;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.btn-primary:hover {
+    background-color: #7d5a3b;
+}
+
+.section-header {
+    color: #9e7e55;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.section-subheader {
+    color: #9e7e55;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.col-md-6 {
+    padding: 15px;
+}
+
+textarea {
+    width: 100%;
+    height: 75px;
+    resize: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .col-md-6 {
+        width: 100%;
+    }
+}

@@ -3,16 +3,18 @@
 
 <head>
     <?php include '../component/head.php'; ?>
+    <link rel="stylesheet" href="../../../assets/css/preconvStyle.css">
     <title>Formulaire Pré-convention</title>
 </head>
 
 <body>
     <div class="container mt-4">
-        <h2 class="mb-4">Formulaire de Pré-convention</h2>
-        <form action="../../controller/preconvController/preConvInsert.php" method="POST">
+        <h2 class="mb-4 text-center">Formulaire de Pré-convention</h2>
+        <form id="formPreConvention" action="../../controller/preconvController/preConvInsert.php" method="POST">
 
-            <hr>
-            <h4>Informations générales</h4>
+            <div class="section-header">
+                <i class="fas fa-info-circle icon"></i>Informations générales
+            </div>
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="student_class" class="form-label">Classe de l'étudiant</label>
@@ -25,7 +27,10 @@
             </div>
 
             <hr>
-            <h4>Étudiant</h4>
+
+            <div class="section-header">
+                <i class="fas fa-user-graduate icon"></i>Étudiant
+            </div>
             <div class="row mb-3">
                 <div class="col-md-4">
                     <label for="student_civility" class="form-label">Civilité</label>
@@ -42,25 +47,33 @@
             </div>
 
             <hr>
-            <h4>Entreprise</h4>
+
+            <div class="section-header">
+                <i class="fas fa-building icon"></i>Entreprise
+            </div>
             <div class="mb-3">
                 <label for="company_name" class="form-label">Nom de l'entreprise</label>
                 <input type="text" class="form-control" id="company_name" name="company_name" required>
             </div>
             <div class="mb-3">
                 <label for="company_address" class="form-label">Adresse de l'entreprise</label>
-                <textarea class="form-control" id="company_address" name="company_address" required></textarea>
+                <input type="text" class="form-control" id="company_address" name="company_address" required>
             </div>
             <div class="mb-3">
                 <label for="internship_location" class="form-label">Lieu de stage</label>
-                <textarea class="form-control" id="internship_location" name="internship_location" required></textarea>
+                <input type="text" class="form-control" id="internship_location" name="internship_location" required>
             </div>
 
             <hr>
-            <h4>Encadrement</h4>
+
+            <div class="section-header">
+                <i class="fas fa-users icon"></i>Encadrement
+            </div>
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <h5>Directeur</h5>
+                    <div class="section-subheader">
+                        <i class="fas fa-chalkboard-teacher icon"></i>Directeur
+                    </div>
                     <label for="director_civility" class="form-label">Civilité</label>
                     <select class="form-select" id="director_civility" name="director_civility" required>
                         <option value="M">M</option>
@@ -75,7 +88,9 @@
                     <input type="email" class="form-control" id="director_email" name="director_email" required>
                 </div>
                 <div class="col-md-6">
-                    <h5>Tuteur (si différent)</h5>
+                    <div class="section-subheader">
+                        <i class="fas fa-user-tie icon"></i>Tuteur (si différent)
+                    </div>
                     <label for="tutor_civility" class="form-label">Civilité</label>
                     <select class="form-select" id="tutor_civility" name="tutor_civility">
                         <option value="">Non applicable</option>
@@ -95,7 +110,10 @@
             </div>
 
             <hr>
-            <h4>Informations sur le stage</h4>
+
+            <div class="section-header">
+                <i class="fas fa-calendar-alt icon"></i>Informations sur le stage
+            </div>
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="start_date" class="form-label">Date de début</label>
