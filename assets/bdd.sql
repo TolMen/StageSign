@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS convention (
     tutor_id INT NOT NULL,
     teacher_id INT NOT NULL,
     direction_id INT NOT NULL,
-    etat ENUM('attente', 'signee', 'archive') NOT NULL,
+    etat ENUM('attente', 'signee', 'archivee') NOT NULL,
     FOREIGN KEY (student_id) REFERENCES student(id) ON DELETE CASCADE,
     FOREIGN KEY (tutor_id) REFERENCES tutor(id) ON DELETE CASCADE,
     FOREIGN KEY (teacher_id) REFERENCES teacher(id) ON DELETE CASCADE,
