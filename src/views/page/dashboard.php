@@ -3,11 +3,11 @@
 session_name("main");
 session_start();
 
-$attente = 0;
+require_once '../../model/ConvModel/ConvModel.php';
+
+$attente = ConvModel::getConvByEtat("attente");
 $signees = 0;
 $archivees = 0;
-
-require_once '../../controller/bddController/connectBDD.php';
 
 connectBDD::redirectNonAdminUser();
 
