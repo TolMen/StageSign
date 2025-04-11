@@ -30,8 +30,12 @@ if (isset($_POST['connexion'])) {
             
             $userAuthModel = new UserAuthModel();
 
-            // Récupère le pseudo fourni
+            // Récupère les informations nécessaires
             $dataAuthUser = $userAuthModel->getAuthUser($pseudo, $password);
+            $role = $userAuthModel->getRoleUser($dataAuthUser["id"]);
+
+            // Regarder dans chaque table où se situe l'ID de l'utilisateur et définir son rôle
+
 
             // Vérifie la présence du pseudo, puis si le MDP correspond au MDP haché dans la BDD
             if ($dataAuthUser) {
@@ -39,7 +43,7 @@ if (isset($_POST['connexion'])) {
                 // Stock les informations dans des variables de session
                 $_SESSION['pseudo'] = $pseudo;
                 $_SESSION['id'] = $dataAuthUser['id'];
-                $_SESSION['role'] = $dataAuthUser['role'];
+                $_SESSION['role'] = $role;
 
                 header('Location: ../../views/page/home.php');
                 exit;
