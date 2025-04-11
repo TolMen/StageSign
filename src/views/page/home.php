@@ -28,6 +28,7 @@ session_start();
             </div>
             <p class="lead text-center">Une solution collaborative pour l'entreprise, l'école et les étudiants</p>
             <a href="../../views/form/loginForm.php" class="explore-btn">Commencer</a>
+            <a href="../../views/page/signInterface.php" class="explore-btn">Signer</a>
             </div>
     </section>
 
