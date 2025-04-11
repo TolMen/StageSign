@@ -13,6 +13,8 @@ echo $_SESSION["pseudo"]." ";
 echo $_SESSION["id"]." ";
 echo $_SESSION["role"]." ";
 
+connectBDD::redirectNonAdminUser();
+
 ?>
 
 <!DOCTYPE html>
