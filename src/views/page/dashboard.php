@@ -3,15 +3,11 @@
 session_name("main");
 session_start();
 
-$attente = 0;
+require_once '../../model/ConvModel/ConvModel.php';
+
+$attente = ConvModel::getConvByEtat("attente");
 $signees = 0;
 $archivees = 0;
-
-require_once '../../controller/bddController/connectBDD.php';
-
-echo $_SESSION["pseudo"]." ";
-echo $_SESSION["id"]." ";
-echo $_SESSION["role"]." ";
 
 connectBDD::redirectNonAdminUser();
 
